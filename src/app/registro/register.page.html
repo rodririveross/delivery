@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+     <ion-back-button></ion-back-button> 
+    </ion-buttons>
+    <ion-title> App de Delivery </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card >
+  <ion-card-header>
+    <ion-card-title>Registro</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <form [formGroup]="formularioRegistro" (keyup.enter)="registrar()">
+      <ion-item>
+     <ion-label position="floating">Usuario</ion-label>
+     <ion-input formControlName="nombre"></ion-input> 
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="password" type="password"> </ion-input> 
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating"> Confirmar Contraseña</ion-label>
+        <ion-input formControlName="confirmacionpassword" type="password"></ion-input> 
+      </ion-item>
+     
+     <br>
+     <ion-button  (click)="registrar()"[routerLink]="['/login']" >Registrarse
+     </ion-button>
+    </form>
+   </ion-card-content>
+</ion-card>
+</ion-content>

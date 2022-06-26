@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-button routerLink="/home">
+      <ion-icon slot="icon-only" color="light"  name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title>Promociones</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+
+<div id="conteiner">
+  <h5>{{title}}</h5>
+
+<ion-slides>
+  <ion-slide   *ngFor="let item of arryPromo">
+    <ion-card>
+      <img  src="{{item.imagenURL}}">
+      <ion-card-header>
+        <ion-card-subtitle>
+          <h3 class="ion-text-capitlize">{{item.diasemana}}</h3>
+        </ion-card-subtitle>
+        <ion-card-title>
+          <p>{{item.promocion}}</p>
+
+        </ion-card-title>
+        <ion-card-subtitle>
+          {{item.descripcion}}
+        </ion-card-subtitle>
+      <ion-button [routerLink]="['/home']"> Ir al Menu</ion-button>
+      </ion-card-header>
+    </ion-card>
+</ion-slide>
+
+</ion-slides>
+</div>
+<ion-img src="assets/images/t.jpg"></ion-img> 
+
+</ion-header>

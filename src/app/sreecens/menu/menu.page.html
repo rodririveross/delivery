@@ -1,0 +1,23 @@
+<ion-content>
+  <div class="header">
+    <h1> Menu  </h1>
+      <div class="avatar">
+        <ion-img src="assets/images/face.png"></ion-img>
+      </div>
+ 
+  </div>
+<ion-searchbar  placeholder="Buscar" (ionChange) ="buscar($event)" searrch-icon="Buscar"></ion-searchbar>
+ <!-- <app-searchbar></app-searchbar>-->
+<!--  menu categorias-->
+<ion-slides>
+
+  <ion-slide class="Categorias">
+  <app-category *ngFor ="let item of Categories"[item]="item" (clicked)="categories(item.id) " ></app-category>
+  </ion-slide>
+</ion-slides>
+<!--  menu populares-->
+<h1 class ="List-header">Todos</h1>
+<div class="food-list">
+<app-food-card *ngFor="let food of buscado" [item]="food" (clicked)="goToDetallePage(food.id) "></app-food-card>
+</div>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title> App de Delivery </ion-title>
+  </ion-toolbar>
+</ion-header>
+<div class="principal">
+  <ion-img src="assets/images/inicio.png"></ion-img>  
+</div>
+ <ion-content>
+ <ion-card>
+
+   <ion-card-header>
+
+      <ion-card-title>Iniciar Sesión</ion-card-title>
+   </ion-card-header>
+ <ion-card-content>
+  <form [formGroup]="formulariologin">
+    <ion-item>
+   <ion-label position="floating">Usuario</ion-label>
+   <ion-input formControlName="nombre"></ion-input> 
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input formControlName="password"></ion-input> 
+    </ion-item>
+   </form>
+   <br>
+   <ion-button (click)="ingresar()" [routerLink]="['/home']" >
+     Ingresar
+   </ion-button>
+ </ion-card-content>
+ </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+   <ion-buttons slot="end">
+     <ion-button [routerLink]="['/register']">  Registrarse</ion-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

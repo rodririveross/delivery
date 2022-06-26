@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <ion-button routerLink="/home/menu">
+      <ion-icon slot="icon-only" color="light"  name="arrow-back"></ion-icon>
+    </ion-button>
+    <ion-title>Favoritos</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!-- cantidad de favoritos-->
+  <h1 class="title" name="cart-outline" *ngIf="(favItems$|async).length">{{(favItems$|async).length}} produto favorito </h1>
+<!-- lista  de productos-->
+<ion-list lines="none">
+<ion-item-sliding *ngFor="let item of favItems$ |async">
+  <ion-item>
+    <app-cart-item [item]="item"></app-cart-item>
+  </ion-item>
+  <ion-item-options side="end">
+    <ion-item-option (click)="(item)">
+      <ion-icon name="trash" size="large" color="danger"></ion-icon>
+    </ion-item-option>
+     </ion-item-options>
+</ion-item-sliding>
+</ion-list>
+ <!-- Favoritos vacio-->
+ <div class="empty-cart" *ngIf="!(favItems$ | async).length">
+  <ion-icon name="star"> </ion-icon>
+  <p> Favorito esta vacio</p>
+  <ion-button [routerLink]="['/home']"> Ir al Menu</ion-button>
+
+</div>
+
+
+
+</ion-content>
+
+ 

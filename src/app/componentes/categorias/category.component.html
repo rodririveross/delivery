@@ -1,0 +1,11 @@
+<ion-buttons>
+  <div class ="wrapper" [ngClass]="item.active ?'active':''">
+  <div class="image-card"  >
+    <ion-button routerLink="'/categories'"> 
+      <p class="ion-no-margin">{{item.label}}</p>
+    </ion-button>
+    <ion-img [src]="item.image" ></ion-img>
+  </div>
+
+  </div>
+</ion-buttons>
